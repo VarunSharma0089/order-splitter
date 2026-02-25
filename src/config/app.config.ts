@@ -6,7 +6,7 @@ export const validationSchema = Joi.object({
   SHARE_DECIMAL_PLACES:  Joi.number().integer().min(0).max(10).default(3),
   NODE_ENV:              Joi.string().valid('development','production','test').default('development'),
 });
-
+//Config
 export const AppConfig = () => ({
   port:               parseInt(process.env.PORT ?? '3000', 10),
   apiKey:             process.env.API_KEY,
