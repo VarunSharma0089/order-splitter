@@ -13,6 +13,7 @@ async function bootstrap() {
 
   app.useGlobalGuards(new ApiKeyGuard(config, app.get(Reflector)));
 
+  //Swagger — only in non-production environments
   if (config.get('nodeEnv') !== 'production') {
     const swaggerConfig = new DocumentBuilder()
       .setTitle('Order Splitter API')
